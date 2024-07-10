@@ -53,61 +53,6 @@ Wiki Bingo is an engaging and educational multiplayer game that combines the thr
   - Enter the number of players.
   - Enter the name for each player.
   - Follow the on-screen instructions to play the game.
-# Wiki Bingo
-
-Wiki Bingo is an engaging and educational multiplayer game that combines the thrill of bingo with the vast information available on Wikipedia. The objective is to complete a bingo card filled with categories by finding relevant Wikipedia articles. Players take turns entering the URLs of articles they find, and the game validates and marks the categories. The first player to complete a row, column, or diagonal wins the game.
-
-## Features
-1. **Multiplayer**: Supports multiple players with personalized bingo cards.
-2. **Timed Turns**: Adds excitement and urgency to each player's turn.
-3. **Wikipedia Integration**: Leverages the vast repository of Wikipedia articles and categories.
-4. **Save/Load Game**: Allows players to save their progress and resume the game later.
-
-## Requirements
-
-- Python 3.x
-
-## Installation
-
-1. **Clone the repository or download the `rps_tournament.py` file.**
-
-2. **Create a Virtual Environment (recommended):**
-
-    ```bash
-    python -m venv venv
-    ```
-
-3. **Activate the virtual environment:**
-
-    - On Windows:
-
-        ```bash
-        venv\Scripts\activate
-        ```
-
-    - On macOS and Linux:
-
-        ```bash
-        source venv/bin/activate
-        ```
-
-4. **Install requirements:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Running the Game
-
-1. **Start the Game**
-  ```bash
-    python main.py
-  ```
-2. **Follow the prompts**
-  - Choose whether to load a saved game or start a new game.
-  - Enter the number of players.
-  - Enter the name for each player.
-  - Follow the on-screen instructions to play the game.
 
 
 
@@ -159,7 +104,7 @@ The game is implemented in Python and consists of several key components, each m
   - 1. Unit tests
   - 2. Manuel ests
 
-## Contriuting
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
