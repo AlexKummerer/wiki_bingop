@@ -1,0 +1,10 @@
+
+venv
+.venv
+/venv
+/.venv
+
+/game_data.csv
+game_data.csv
+/.game_data.csv
+.game_data.csv
