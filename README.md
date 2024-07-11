@@ -14,15 +14,14 @@ Wiki Bingo is an engaging and educational multiplayer game that combines the thr
 
 ## Installation
 
-1. **Clone the repository or download the `rps_tournament.py` file.**
 
-2. **Create a Virtual Environment (recommended):**
+1. **Create a Virtual Environment (recommended):**
 
     ```bash
     python -m venv venv
     ```
 
-3. **Activate the virtual environment:**
+2. **Activate the virtual environment:**
 
     - On Windows:
 
@@ -36,7 +35,7 @@ Wiki Bingo is an engaging and educational multiplayer game that combines the thr
         source venv/bin/activate
         ```
 
-4. **Install requirements:**
+3. **Install requirements:**
 
     ```bash
     pip install -r requirements.txt

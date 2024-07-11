@@ -1,5 +1,4 @@
 import threading
-
 from colours import BLUE, RED, RESET, YELLOW
 
 
@@ -12,6 +11,7 @@ def mark_category(bingo_card, marked_categories, categories):
         marked_categories (list): List of marked categories.
         categories (list): List of categories to mark.
     """
+
     size = len(marked_categories)
 
     for category in categories:
@@ -24,9 +24,7 @@ def mark_category(bingo_card, marked_categories, categories):
                         marked_categories[row][column] = True
                         print(f"{YELLOW}Category '{category}' marked!{RESET}")
                     else:
-                        print(
-                            f"{BLUE}Category '{category}' is already marked!{RESET}"
-                        )
+                        print(f"{BLUE}Category '{category}' is already marked!{RESET}")
                     found = True
                     break
             if found:
@@ -35,9 +33,6 @@ def mark_category(bingo_card, marked_categories, categories):
             print(
                 f"{RED}Category '{category}' from the article is not on the bingo card{RESET}"
             )
-
-
-
 
 
 def input_with_timeout(prompt, timeout):
@@ -51,6 +46,7 @@ def input_with_timeout(prompt, timeout):
     Returns:
         str: User input or empty string if timeout.
     """
+
     def timed_input():
         nonlocal user_input
         user_input = input(prompt)
@@ -86,5 +82,5 @@ def handle_user_input_with_timeout(timeout=30):
     if user_input:
         return user_input
     else:
-        print("Time's up! Input session expired.")
+        print(f"{RED}Time's up! Input session expired.{RESET}")
         return user_input

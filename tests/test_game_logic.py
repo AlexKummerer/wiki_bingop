@@ -2,6 +2,8 @@ import pytest
 from ..game_logic import check_bingo, manage_turns
 from ..bingo_card_generation import generate_bingo_card, display_bingo_card
 
+
+
 @pytest.fixture
 def setup_game():
     players = {
@@ -43,7 +45,7 @@ def test_manage_turns(monkeypatch, setup_game):
     # Mocking dependencies and user input
     from ..wikipedia_api import validate_category_from_url
     from ..user_interaction import handle_user_input_with_timeout, mark_category
-    from save_data import save_game
+    import save_data
 
 
     players, player = setup_game

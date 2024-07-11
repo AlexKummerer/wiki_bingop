@@ -1,3 +1,4 @@
+from colours import RESET, YELLOW
 from save_data import load_game
 from bingo_card_generation import generate_bingo_card
 from wikipedia_api import get_random_categories
@@ -32,7 +33,7 @@ def main():
     """
     Main function to start the Wiki Bingo game.
     """
-    print("Welcome to Wiki Bingo!\n")
+    print(f"{YELLOW}Welcome to Wiki Bingo!\n{RESET}")
 
     # Greet users and ask if they want to load a saved game or start a new game
     load_choice = (

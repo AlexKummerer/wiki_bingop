@@ -1,6 +1,5 @@
 import random
 import textwrap
-
 from colours import PURPLE, RESET, YELLOW
 
 
@@ -37,7 +36,7 @@ def display_bingo_card(card, marked, size=5):
             wrapped_category = textwrap.wrap(category, column_width)
             if marked[i][j]:
                 wrapped_category[
-                    0] = f"{YELLOW}[X] {wrapped_category[0]}{RESET}"
+                    0] = f"{YELLOW}[X] {wrapped_category[0]}"
             else:
                 wrapped_category[0] = f"[ ] {wrapped_category[0]}"
 
