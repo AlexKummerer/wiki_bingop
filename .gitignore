@@ -8,3 +8,5 @@ venv
 game_data.csv
 /.game_data.csv
 .game_data.csv
+
+__pycache__
