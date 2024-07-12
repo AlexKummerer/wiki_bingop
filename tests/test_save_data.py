@@ -1,6 +1,6 @@
 import pytest
 import json
-from ..save_data import save_game, load_game
+from save_data import save_game, load_game
 
 def test_save_game(tmp_path):
     state = {'player1': {'card': [], 'marked': []}}

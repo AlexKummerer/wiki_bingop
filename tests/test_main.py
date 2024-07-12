@@ -16,8 +16,17 @@ def test_main(monkeypatch):
     def mock_input(prompt):
         return 'no'
 
-    monkeypatch.setattr('builtins.input', mock_input)
-    monkeypatch.setattr(main, 'setup_new_game', lambda: ({}, []))
-    monkeypatch.setattr(game_logic, 'handle_players_turn', lambda players, names: None)
+    def mock_setup_new_game():
+        players = {
+            "Alice": {"card": [], "marked": []},
+            "Bob": {"card": [], "marked": []},
+        }
+        player_names = ["Alice", "Bob"]
+        return players, player_names
 
-    main.main()
+    def mock_handle_players_turn(players, player_names):
+        pass
+
+    monkeypatch.setattr('builtins.input', mock_input)
+    monkeypatch.setattr(main, 'setup_new_game', mock_setup_new_game)
+    monkeypatch.setattr(game_logic, 'handle_players_turn', mock_handle_players_turn)

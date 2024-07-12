@@ -1,7 +1,7 @@
-from save_data import save_game
-from wikipedia_api import validate_category_from_url
-from bingo_card_generation import display_bingo_card
-from user_interaction import handle_user_input_with_timeout, mark_category
+import save_data 
+import wikipedia_api 
+import bingo_card_generation 
+import user_interaction 
 
 
 def check_bingo(marked):
@@ -67,20 +67,20 @@ def manage_turns(player, players):
         bool: True if the game ends (either a player wins or exits), otherwise None.
     """
     print(f"{player}'s turn:")
-    display_bingo_card(players[player]['card'], players[player]['marked'])
+    bingo_card_generation.display_bingo_card(players[player]['card'], players[player]['marked'])
     print("Pls press Enter if you didn't see an input")
-    action = handle_user_input_with_timeout(60)
+    action = user_interaction.handle_user_input_with_timeout(60)
     if action == 'exit':
         print("\033[91mThanks for playing!\033[0m")
         return True
     elif action == 'save':
-        save_game(players)
+        save_data.save_game(players)
 
-    valid, categories = validate_category_from_url(action,
+    valid, categories = wikipedia_api.validate_category_from_url(action,
                                                    players[player]['card'])
 
     if valid:
-        mark_category(players[player]['card'], players[player]['marked'],
+        user_interaction.mark_category(players[player]['card'], players[player]['marked'],
                       categories)
         print("\033[94mArticle marked on the bingo card.\033[0m")
         if check_bingo(players[player]['marked']):

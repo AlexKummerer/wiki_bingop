@@ -4,6 +4,8 @@ from bingo_card_generation import generate_bingo_card
 from wikipedia_api import get_random_categories
 from game_logic import handle_players_turn
 
+
+
 def setup_new_game():
     """
     Set up a new game by initializing players and their bingo cards.

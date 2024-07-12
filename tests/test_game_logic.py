@@ -11,8 +11,8 @@ def setup_game():
             "marked": [[False]*5 for _ in range(5)]
         }
     }
-    player = "player1"
-    return players, player
+    player_names = list(players.keys())
+    return players, player_names
 
 def test_check_bingo():
     # Test row bingo
@@ -40,12 +40,12 @@ def test_check_bingo():
     assert game_logic.check_bingo(marked) == False, "Should not detect a bingo"
 
 def test_manage_turns(monkeypatch, setup_game):
-    players, player = setup_game
+    players, player_names = setup_game
 
     def mock_input(prompt):
         return 'exit'
 
-    def mock_display_bingo_card(card, marked, size):
+    def mock_display_bingo_card(card, marked, size = 5):
         pass
 
     def mock_handle_user_input_with_timeout(timeout):
@@ -54,6 +54,11 @@ def test_manage_turns(monkeypatch, setup_game):
     monkeypatch.setattr('builtins.input', mock_input)
     monkeypatch.setattr(bingo_card_generation, 'display_bingo_card', mock_display_bingo_card)
     monkeypatch.setattr(user_interaction, 'handle_user_input_with_timeout', mock_handle_user_input_with_timeout)
+    
+    current_player_index = 0
+    num_players = len(player_names)
+    current_player = player_names[current_player_index]
 
-    result = game_logic.manage_turns(player, players)
+
+    result = game_logic.manage_turns(current_player, players)
     assert result == True, "Should exit the game when user inputs 'exit'"

@@ -1,6 +1,7 @@
 import pytest
-from ..user_interaction import mark_category, input_with_timeout, handle_user_input_with_timeout
+from user_interaction import mark_category, input_with_timeout, handle_user_input_with_timeout
 from colours import BLUE, RED, RESET, YELLOW
+
 
 def test_mark_category(capsys):
     card = [f"Category {i}" for i in range(25)]
